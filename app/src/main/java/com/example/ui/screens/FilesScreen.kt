@@ -60,6 +60,7 @@ import com.example.ui.theme.HollowRed
 import com.example.ui.theme.JetBrainsMonoFontFamily
 import com.example.ui.theme.StoneElevated
 import com.example.ui.theme.StoneSurface
+import com.example.ui.theme.SoulCyan
 import com.example.ui.theme.WeatheredSteel
 
 @Composable
@@ -306,6 +307,94 @@ fun FilesScreen(
                             }
                         }
                     }
+                }
+            }
+        }
+
+        // Real PE Executable & Container Environment Inspector
+        item {
+            val binaryInfo = uiState.containerState.binaryInfo
+            val externalRunners = uiState.containerState.externalContainerAppsDetected
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("container_binary_inspector_card"),
+                shape = RoundedCornerShape(14.dp),
+                colors = CardDefaults.cardColors(containerColor = StoneSurface),
+                border = androidx.compose.foundation.BorderStroke(1.dp, BonfireFlame.copy(alpha = 0.5f))
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Default.CheckCircle,
+                                contentDescription = null,
+                                tint = if (binaryInfo.isLoaded) Color(0xFF10B981) else BonfireFlame,
+                                modifier = Modifier.size(20.dp)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = "BINARY PE HEADER & CONTAINER LINK",
+                                fontFamily = CinzelFontFamily,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 13.sp,
+                                color = BonfireGlow
+                            )
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Surface(
+                        modifier = Modifier.fillMaxWidth(),
+                        color = Color(0xFF141210),
+                        shape = RoundedCornerShape(8.dp),
+                        border = androidx.compose.foundation.BorderStroke(0.6.dp, StoneElevated)
+                    ) {
+                        Column(modifier = Modifier.padding(10.dp)) {
+                            Text(
+                                text = "Edition: ${binaryInfo.detectedGameEdition}",
+                                fontFamily = JetBrainsMonoFontFamily,
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = AncientParchment
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "Target Machine: ${binaryInfo.machineType}",
+                                fontFamily = JetBrainsMonoFontFamily,
+                                fontSize = 10.sp,
+                                color = WeatheredSteel
+                            )
+                            Text(
+                                text = "Subsystem: ${binaryInfo.subsystem} • Entry: ${binaryInfo.entryPointAddress}",
+                                fontFamily = JetBrainsMonoFontFamily,
+                                fontSize = 10.sp,
+                                color = WeatheredSteel
+                            )
+                            if (binaryInfo.sha256Checksum.isNotEmpty()) {
+                                Text(
+                                    text = "SHA-256: ${binaryInfo.sha256Checksum}",
+                                    fontFamily = JetBrainsMonoFontFamily,
+                                    fontSize = 9.sp,
+                                    color = SoulCyan
+                                )
+                            }
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(
+                        text = "External PC Runners Detected: ${if (externalRunners.isNotEmpty()) externalRunners.joinToString(", ") else "None (Using Built-in Container Engine)"}",
+                        fontFamily = JetBrainsMonoFontFamily,
+                        fontSize = 10.sp,
+                        color = if (externalRunners.isNotEmpty()) Color(0xFF34D399) else WeatheredSteel
+                    )
                 }
             }
         }

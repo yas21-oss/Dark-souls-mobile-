@@ -5,6 +5,9 @@ import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.container.ContainerLifecycleStage
+import com.example.container.ContainerState
+import com.example.container.GameContainerEngine
 import com.example.model.ActiveDownloadState
 import com.example.model.DefaultHudLayout
 import com.example.model.DownloadCatalog
@@ -32,6 +35,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.io.File
 
 enum class AppTab(val title: String) {
     LAUNCHER("Bonfire"),
@@ -58,6 +62,9 @@ data class MainUiState(
     val gameFilesReport: GameFilesReport = GameFilesReport(),
     val isCheckingFiles: Boolean = false,
     val demoModeUnlocked: Boolean = false,
+    // Container Subsystem & Real Game Engine
+    val containerState: ContainerState = ContainerState(),
+    val isContainerViewportActive: Boolean = false,
     // Downloads
     val downloadPackages: List<DownloadPackage> = DownloadCatalog.PACKAGES,
     val activeDownloadState: ActiveDownloadState = ActiveDownloadState(),
@@ -72,7 +79,6 @@ data class MainUiState(
     val generatedConfigText: String = "",
     // Controls
     val hudPreferences: HudPreferences = HudPreferences(),
-    val isHudSimulatorActive: Boolean = false,
     // Saves & Build Calculator
     val saveCharacters: List<SaveCharacter> = SampleSaves.CHARACTERS,
     val selectedCharacterId: String = "slot_1",
@@ -110,20 +116,31 @@ data class MainUiState(
 }
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
+    val containerEngine = GameContainerEngine(application)
+
     private val _uiState = MutableStateFlow(MainUiState())
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()
 
     private var downloadJob: Job? = null
+    private var activeFolderUri: Uri? = null
 
     init {
         generateConfigFile()
         loadInitialGameFolder()
+
+        // Sync Container State with UI State
+        viewModelScope.launch {
+            containerEngine.containerState.collect { cState ->
+                _uiState.update { it.copy(containerState = cState) }
+            }
+        }
     }
 
     private fun loadInitialGameFolder() {
         val context = getApplication<Application>()
         val savedUri = GameFileManager.getSavedFolderUri(context)
         if (savedUri != null) {
+            activeFolderUri = savedUri
             val report = GameFileManager.inspectGameFolder(context, savedUri)
             _uiState.update { it.copy(gameFilesReport = report) }
         }
@@ -131,6 +148,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onGameFolderSelected(uri: Uri) {
         val context = getApplication<Application>()
+        activeFolderUri = uri
         viewModelScope.launch {
             _uiState.update { it.copy(isCheckingFiles = true) }
             GameFileManager.saveFolderUri(context, uri)
@@ -142,7 +160,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     launchBannerMessage = if (report.isValidGameReady)
                         "Game folder verified! DARKSOULS.exe ready to launch."
                     else
-                        "Folder selected: ${report.folderDisplayName}, but DARKSOULS.exe was not detected."
+                        "Folder selected: ${report.folderDisplayName}, but DARKSOULS.exe was not detected in root."
                 )
             }
         }
@@ -150,6 +168,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun clearGameFolder() {
         val context = getApplication<Application>()
+        activeFolderUri = null
         GameFileManager.clearSavedFolder(context)
         _uiState.update {
             it.copy(
@@ -167,7 +186,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             it.copy(
                 demoModeUnlocked = enabled,
                 launchBannerMessage = if (enabled)
-                    "Simulator Mode active (Allows testing without physical game files)"
+                    "Simulator Mode active (Allows testing container viewport without physical game files)"
                 else
                     "Strict game files requirement restored."
             )
@@ -178,15 +197,92 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _uiState.update { it.copy(currentTab = tab) }
     }
 
+    // --- REAL Container Game Launch & Runtime Actions ---
+
+    fun launchGame(onRequestPickFolder: () -> Unit) {
+        if (!_uiState.value.isCanLaunchGame) {
+            _uiState.update {
+                it.copy(
+                    launchBannerMessage = "⚠️ Cannot launch: Game files missing! Please download or select your Dark Souls directory.",
+                    currentTab = AppTab.FILES
+                )
+            }
+            onRequestPickFolder()
+            return
+        }
+
+        val state = _uiState.value
+        val isSnapdragon = state.activeDriver?.family == "Turnip" || state.selectedEngineMode == EngineMode.SNAPDRAGON_TURNIP
+
+        _uiState.update {
+            it.copy(
+                isGameLaunching = true,
+                launchBannerMessage = if (isSnapdragon)
+                    "Starting Dark Souls on Snapdragon Adreno (Mesa Turnip 60 FPS)..."
+                else
+                    "Starting Dark Souls on Mali Valhall CSF (CoD4 Smooth 30 FPS)..."
+            )
+        }
+
+        containerEngine.bootAndLaunchGame(
+            driver = state.activeDriver,
+            engineMode = state.selectedEngineMode,
+            dsfix = state.dsfixSettings,
+            gameFolderUri = activeFolderUri,
+            onReadyToPlay = {
+                _uiState.update {
+                    it.copy(
+                        isGameLaunching = false,
+                        isContainerViewportActive = true,
+                        launchBannerMessage = if (isSnapdragon)
+                            "Container Active: Snapdragon Turnip GMEM Direct 60 FPS!"
+                        else
+                            "Container Active: Mali-G57 PanVK Valhall CSF CoD4 Engine 30 FPS!"
+                    )
+                }
+            }
+        )
+    }
+
+    fun setContainerViewportActive(active: Boolean) {
+        if (!active) {
+            containerEngine.stopContainer()
+        }
+        _uiState.update { it.copy(isContainerViewportActive = active) }
+    }
+
+    fun handleInputEvent(buttonId: String, pressed: Boolean) {
+        containerEngine.handleInputEvent(buttonId, pressed)
+    }
+
+    fun restAtBonfire() {
+        containerEngine.restAtBonfire()
+        viewModelScope.launch {
+            _uiState.update {
+                it.copy(
+                    isRestedAtBonfire = true,
+                    launchBannerMessage = "BONFIRE LIT — Estus Flasks Refilled (5/5). HP Fully Restored."
+                )
+            }
+            delay(3500)
+            _uiState.update { it.copy(isRestedAtBonfire = false) }
+        }
+    }
+
+    fun exportContainerProfile(): File {
+        val file = containerEngine.exportContainerProfile()
+        _uiState.update {
+            it.copy(launchBannerMessage = "Exported container launch script to ${file.name}")
+        }
+        return file
+    }
+
     // --- REAL Downloads Management ---
 
     fun updateCustomDownloadUrl(url: String) {
         _uiState.update { it.copy(customDownloadUrlInput = url) }
     }
 
-    /**
-     * Real streaming network download: reads actual bytes from network and writes to storage.
-     */
     fun startRealDirectDownload(pkg: DownloadPackage) {
         val context = getApplication<Application>()
         val ext = if (pkg.format.contains("RAR", ignoreCase = true)) "rar" else "zip"
@@ -237,9 +333,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /**
-     * Real System DownloadManager: enqueues background download and polls the Android Download database cursor.
-     */
     fun startSystemDownloadWithRealTracking(pkg: DownloadPackage) {
         val context = getApplication<Application>()
         val ext = if (pkg.format.contains("RAR", ignoreCase = true)) "rar" else "zip"
@@ -546,61 +639,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun updateHudPreferences(update: (HudPreferences) -> HudPreferences) {
         _uiState.update { it.copy(hudPreferences = update(it.hudPreferences)) }
-    }
-
-    fun setHudSimulatorActive(active: Boolean) {
-        _uiState.update { it.copy(isHudSimulatorActive = active) }
-    }
-
-    fun restAtBonfire() {
-        viewModelScope.launch {
-            _uiState.update {
-                it.copy(
-                    isRestedAtBonfire = true,
-                    launchBannerMessage = "BONFIRE LIT — Estus Flask Restored. Ready for Dark Souls."
-                )
-            }
-            delay(3500)
-            _uiState.update { it.copy(isRestedAtBonfire = false) }
-        }
-    }
-
-    fun launchGame(onRequestPickFolder: () -> Unit) {
-        if (!_uiState.value.isCanLaunchGame) {
-            _uiState.update {
-                it.copy(
-                    launchBannerMessage = "⚠️ Cannot launch game: Game files missing! Please download or select your Dark Souls directory.",
-                    currentTab = AppTab.FILES
-                )
-            }
-            onRequestPickFolder()
-            return
-        }
-
-        val isSnapdragon = _uiState.value.activeDriver?.family == "Turnip" || _uiState.value.selectedEngineMode == EngineMode.SNAPDRAGON_TURNIP
-
-        viewModelScope.launch {
-            _uiState.update {
-                it.copy(
-                    isGameLaunching = true,
-                    launchBannerMessage = if (isSnapdragon)
-                        "Launching Dark Souls via Snapdragon Beast Engine (Turnip 26.2.4 @ 60 FPS)..."
-                    else
-                        "Launching Dark Souls via Mali CoD4 Engine (PanVK Valhall CSF @ 30 FPS)..."
-                )
-            }
-            delay(2000)
-            _uiState.update {
-                it.copy(
-                    isGameLaunching = false,
-                    isHudSimulatorActive = true,
-                    launchBannerMessage = if (isSnapdragon)
-                        "Game running smoothly on Snapdragon Adreno! 60 FPS Direct GMEM."
-                    else
-                        "Game running smoothly on Helio G99 / Mali! CoD4 Pipeline active."
-                )
-            }
-        }
     }
 
     fun clearBannerMessage() {

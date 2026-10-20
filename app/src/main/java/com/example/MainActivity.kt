@@ -55,7 +55,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.ui.components.InteractiveHudOverlay
+import com.example.ui.screens.ContainerViewportScreen
 import com.example.ui.screens.ControlsScreen
 import com.example.ui.screens.DownloadScreen
 import com.example.ui.screens.DriversScreen
@@ -97,8 +97,8 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
-                BackHandler(enabled = uiState.isHudSimulatorActive) {
-                    viewModel.setHudSimulatorActive(false)
+                BackHandler(enabled = uiState.isContainerViewportActive) {
+                    viewModel.setContainerViewportActive(false)
                 }
 
                 Box(
@@ -281,7 +281,7 @@ class MainActivity : ComponentActivity() {
                                 AppTab.CONTROLS -> ControlsScreen(
                                     uiState = uiState,
                                     onUpdatePreferences = { update -> viewModel.updateHudPreferences(update) },
-                                    onOpenSimulator = { viewModel.setHudSimulatorActive(true) }
+                                    onOpenSimulator = { viewModel.setContainerViewportActive(true) }
                                 )
                                 AppTab.SAVES -> SavesScreen(
                                     uiState = uiState,
@@ -343,15 +343,19 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                    // Fullscreen Interactive Touch Simulator Overlay
+                    // Fullscreen Real Container Game Viewport Overlay
                     androidx.compose.animation.AnimatedVisibility(
-                        visible = uiState.isHudSimulatorActive,
+                        visible = uiState.isContainerViewportActive,
                         enter = fadeIn(),
                         exit = fadeOut()
                     ) {
-                        InteractiveHudOverlay(
-                            preferences = uiState.hudPreferences,
-                            onClose = { viewModel.setHudSimulatorActive(false) }
+                        ContainerViewportScreen(
+                            containerState = uiState.containerState,
+                            hudPreferences = uiState.hudPreferences,
+                            onInputEvent = { btnId, pressed -> viewModel.handleInputEvent(btnId, pressed) },
+                            onRestAtBonfire = { viewModel.restAtBonfire() },
+                            onExportProfile = { viewModel.exportContainerProfile() },
+                            onClose = { viewModel.setContainerViewportActive(false) }
                         )
                     }
                 }

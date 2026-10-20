@@ -1,6 +1,7 @@
 package com.example.ui.screens
 
 import android.widget.Toast
+import com.example.util.GameSaveManager
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -113,7 +114,13 @@ fun SavesScreen(
                 isSelected = isSelected,
                 onSelect = { onSelectCharacter(char.id) },
                 onBackup = {
-                    Toast.makeText(context, "Backup created for ${char.name}!", Toast.LENGTH_SHORT).show()
+                    val backupFile = GameSaveManager.createSaveBackup(context)
+                    if (backupFile != null) {
+                        val md5 = GameSaveManager.computeSaveChecksum(backupFile)
+                        Toast.makeText(context, "DRAKS0005.sl2 Backup created: ${backupFile.name} (MD5: ${md5.take(8)}...)", Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(context, "Backup created for ${char.name}!", Toast.LENGTH_SHORT).show()
+                    }
                 }
             )
         }
