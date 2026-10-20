@@ -1,0 +1,6 @@
+{
+  "name": "Dark Souls",
+  "description": "Dark Souls launcher optimized for ARM Mali (Helio G99 CoD4 smooth pipeline) & Qualcomm Snapdragon (Adreno Turnip 60 FPS), custom touch HUD, and save manager.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

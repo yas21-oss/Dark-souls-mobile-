@@ -1,0 +1,170 @@
+[
+  {
+    "map": "killhouse",
+    "title": "F.N.G.",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/6/6d/John_Price_F.N.G_CoD4.png",
+    "file": "apkwork/mission-downloads/killhouse.jpg",
+    "sha256": "ed240dbae0b76b2a1a8884f45854fee0b9a41bcb7e6cb78af03229a1fa02589c",
+    "asset": "ghost-ui/missions/killhouse.jpg"
+  },
+  {
+    "map": "cargoship",
+    "title": "Crew Expendable",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/a/a0/Crew_Expendable.jpg",
+    "file": "apkwork/mission-downloads/cargoship.jpg",
+    "sha256": "089a86246d06c5250954f6aabea558e47364e3139c7881313b9c99d9cd6968ad",
+    "asset": "ghost-ui/missions/cargoship.jpg"
+  },
+  {
+    "map": "coup",
+    "title": "The Coup",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/5/59/The_Coup.jpg",
+    "file": "apkwork/mission-downloads/coup.jpg",
+    "sha256": "85b5123f85a6acc311002c00a4cd683e7a160fb929652ca3666260aa10cd13b5",
+    "asset": "ghost-ui/missions/coup.jpg"
+  },
+  {
+    "map": "blackout",
+    "title": "Blackout",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/4/45/Rescuing_Nikolai_Blackout_CoD4.png",
+    "file": "apkwork/mission-downloads/blackout.jpg",
+    "sha256": "61be531dce1084655cf1c79fbb3f639fd97d413890653945967cc7808c6c489a",
+    "asset": "ghost-ui/missions/blackout.jpg"
+  },
+  {
+    "map": "armada",
+    "title": "Charlie Don't Surf",
+    "url": "https://static.wikia.nocookie.net/call-of-duty/sv/images/3/3b/Charlie_Don%27t_Surf_Campaign.jpg",
+    "file": "apkwork/mission-downloads/armada.jpg",
+    "sha256": "7ff511f266673fa3caa1c30e1549f20c648c6ae0a031ac3a93928b4940fd0870",
+    "asset": "ghost-ui/missions/armada.jpg"
+  },
+  {
+    "map": "bog_a",
+    "title": "The Bog",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/c/c0/The_Bog.jpg",
+    "file": "apkwork/mission-downloads/bog_a.jpg",
+    "sha256": "aa560da8e5cb745bf64da249e628e981bcea1efcae7a8be8321dee2aa201cd91",
+    "asset": "ghost-ui/missions/bog_a.jpg"
+  },
+  {
+    "map": "hunted",
+    "title": "Hunted",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/b/b1/Hunted_CoD4.jpg",
+    "file": "apkwork/mission-downloads/hunted.jpg",
+    "sha256": "2265c518be6d952ebd52a518cb9b8f3c19c6907bc76d3d59f69c2c26eb5f4418",
+    "asset": "ghost-ui/missions/hunted.jpg"
+  },
+  {
+    "map": "ac130",
+    "title": "Death From Above",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/a/ac/AC-130_Death_From_Above_CoD4.jpg",
+    "file": "apkwork/mission-downloads/ac130.jpg",
+    "sha256": "1995b3175ae09fb5ab8f697fc81d2353c2312675f1b9fba27c1aa53ea7f9bff9",
+    "asset": "ghost-ui/missions/ac130.jpg"
+  },
+  {
+    "map": "bog_b",
+    "title": "War Pig",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/2/2f/War_Pig_Campaign.jpg",
+    "file": "apkwork/mission-downloads/bog_b.jpg",
+    "sha256": "69b9b12809b849356ce8af8573428d41dd90ed31f771b06c3054a29a4778ef46",
+    "asset": "ghost-ui/missions/bog_b.jpg"
+  },
+  {
+    "map": "airlift",
+    "title": "Shock and Awe",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/e/e3/Shock_and_Awe.jpg",
+    "file": "apkwork/mission-downloads/airlift.jpg",
+    "sha256": "1f54fa8d27cce9fba574af45800f9aad2c7765ec4e442de75d4b0039bc126767",
+    "asset": "ghost-ui/missions/airlift.jpg"
+  },
+  {
+    "map": "aftermath",
+    "title": "Aftermath",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/a/ab/Aftermath.png",
+    "file": "apkwork/mission-downloads/aftermath.png",
+    "sha256": "9cb94a328126b3d8ea1f4dbd712cefcaafe071ac761d4edbcfd9fbbdc9bd889a",
+    "asset": "ghost-ui/missions/aftermath.jpg"
+  },
+  {
+    "map": "village_assault",
+    "title": "Safehouse",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/6/6d/Safehouse_Campaign.png",
+    "file": "apkwork/mission-downloads/village_assault.jpg",
+    "sha256": "0fb3de69d0fb61ed65c25cbd4509ce03075317105b9d63f7988de8150d7e2f1d",
+    "asset": "ghost-ui/missions/village_assault.jpg"
+  },
+  {
+    "map": "scoutsniper",
+    "title": "All Ghillied Up",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/7/7b/All_Ghillied_Up.png",
+    "file": "apkwork/mission-downloads/scoutsniper.png",
+    "sha256": "06ab08d833496a01b376706b9fcd5891ec9c74c18380ba930f96a28fed5171c6",
+    "asset": "ghost-ui/missions/scoutsniper.jpg"
+  },
+  {
+    "map": "sniperescape",
+    "title": "One Shot, One Kill",
+    "url": "https://images.steamusercontent.com/ugc/15765101953629952965/8957B1808AB86DAE349B489BE1A63D635BF4D688/?ima=fit&imcolor=%23000000&impolicy=Letterbox&imw=1024&letterbox=false",
+    "file": "apkwork/mission-downloads/sniperescape.jpg",
+    "sha256": "658feaec4522e3b26a02d45031e53dd735b9455399f1a89783d9a2b23585d6cc",
+    "asset": "ghost-ui/missions/sniperescape.jpg"
+  },
+  {
+    "map": "village_defend",
+    "title": "Heat",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/b/b1/Heat_Campaign.png",
+    "file": "apkwork/mission-downloads/village_defend.jpg",
+    "sha256": "a0f3393d8f6fc290301f4e3a90511c566b8c98681d11822df6a2715033daf52c",
+    "asset": "ghost-ui/missions/village_defend.jpg"
+  },
+  {
+    "map": "ambush",
+    "title": "The Sins of the Father",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/7/7f/Sins_of_the_Father_Campaign.jpg",
+    "file": "apkwork/mission-downloads/ambush.jpg",
+    "sha256": "50c7988ab456d924c4e8c2b3b4b2dd95dd81968807ad31f570abf0101d807559",
+    "asset": "ghost-ui/missions/ambush.jpg"
+  },
+  {
+    "map": "icbm",
+    "title": "Ultimatum",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/b/bb/Ultimatum.jpg",
+    "file": "apkwork/mission-downloads/icbm.jpg",
+    "sha256": "9d5e70ad596ed6863241c32f1e4d91c49087f9f2539ad7a5225137f00225aac9",
+    "asset": "ghost-ui/missions/icbm.jpg"
+  },
+  {
+    "map": "launchfacility_a",
+    "title": "All In",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/c/cf/All_In.jpg",
+    "file": "apkwork/mission-downloads/launchfacility_a.jpg",
+    "sha256": "aa255bef1c13d8fe2eaf03fe0e73e5e987d2efe8d0b80c16551c82b008428f1a",
+    "asset": "ghost-ui/missions/launchfacility_a.jpg"
+  },
+  {
+    "map": "launchfacility_b",
+    "title": "No Fighting in the War Room",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/9/98/No_Fighting_in_the_War_Room.jpg",
+    "file": "apkwork/mission-downloads/launchfacility_b.jpg",
+    "sha256": "bc0f080f870f67526461706fcf08aee45a46605dfe79e8316ef179d7599e1751",
+    "asset": "ghost-ui/missions/launchfacility_b.jpg"
+  },
+  {
+    "map": "jeepride",
+    "title": "Game Over",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/f/f0/Game_Over.png",
+    "file": "apkwork/mission-downloads/jeepride.png",
+    "sha256": "eb90578b175f93b6702a7e75764999fef404b2b8f7e34f7f4a8743faa603fe80",
+    "asset": "ghost-ui/missions/jeepride.jpg"
+  },
+  {
+    "map": "airplane",
+    "title": "Mile High Club",
+    "url": "https://static.wikia.nocookie.net/callofduty/images/0/0f/Hostage_before_jumping_out_of_the_plane_Mile_High_Club_CoD4.png",
+    "file": "apkwork/mission-downloads/airplane.jpg",
+    "sha256": "41509e952c724dae7bad062568bd60c05d1fad144cfc7e8c7f10104e467fbc4d",
+    "asset": "ghost-ui/missions/airplane.jpg"
+  }
+]

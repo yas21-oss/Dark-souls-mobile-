@@ -1,0 +1,124 @@
+{
+  "schema": 2,
+  "builtAt": "2026-10-12",
+  "autoDownload": true,
+  "autoActivate": false,
+  "source": "APK-signed pinned upstream packages",
+  "entries": [
+    {
+      "name": "PanVK Kbase RC3",
+      "family": "PanVK",
+      "source": "zenithblue-oss/panvk-kbase-android",
+      "tag": "panvk-kbase-v0.1.0-rc3",
+      "asset": "PanVK-Kbase-Android-g615-v11-csf-v0.1.0-rc3-5a07217f.adpkg.zip",
+      "url": "https://github.com/zenithblue-oss/panvk-kbase-android/releases/download/panvk-kbase-v0.1.0-rc3/PanVK-Kbase-Android-g615-v11-csf-v0.1.0-rc3-5a07217f.adpkg.zip",
+      "sha256": "4ef95dfd5118f1f7854de97ed342a551971c1e339bea3160566a5725a792c85f",
+      "libraryName": "libvulkan_panfrost.so",
+      "librarySha256": "b46b9f0416f207a05482349dffb37b6f3d84c20762151c623774831ce3939445",
+      "minApi": 35,
+      "gpuModels": [
+        "G57",
+        "G68",
+        "G77",
+        "G78",
+        "G78AE",
+        "G610",
+        "G710",
+        "G615",
+        "G715",
+        "G720",
+        "G925"
+      ],
+      "panvkFrontend": "universal-v9-v13",
+      "experimental": true,
+      "gameplayValidated": false,
+      "maturity": "upstream candidate; device presentation probe required"
+    },
+    {
+      "name": "PanVK Bifrost 1.3.0",
+      "family": "PanVK",
+      "source": "JimVulkan/mali-panvk",
+      "tag": "v1.3.0",
+      "asset": "mali-panvk-26.3.0-devel-r4.zip",
+      "url": "https://github.com/JimVulkan/mali-panvk/releases/download/v1.3.0/mali-panvk-26.3.0-devel-r4.zip",
+      "sha256": "1bf5fdbc6fa7134100f747692436eeee5e112e640a8b5064345facbfac918787",
+      "libraryName": "libvulkan_panfrost.so",
+      "librarySha256": "56607aec4ad3d3637f807b827afd27d4cd9b717ccae362fd522cf94eb32b0343",
+      "minApi": 31,
+      "gpuModels": [
+        "G52",
+        "G72",
+        "G76"
+      ],
+      "panvkFrontend": "bifrost-jm",
+      "experimental": true,
+      "gameplayValidated": false,
+      "maturity": "upstream candidate; device presentation probe required"
+    },
+    {
+      "name": "PanVK Kbase beta18 RC1",
+      "family": "PanVK",
+      "minApi": 35,
+      "url": "https://github.com/zenithblue-oss/panvk-kbase-android/releases/download/g615-v11-csf-v0.1.0-beta.18-rc1/PanVK-Kbase-Android-g615-v11-csf-v0.1.0-beta.18-rc1-5a07217f.adpkg.zip",
+      "sha256": "50f1e096d9521c3c1c63ed8e8248dc6459e7fcb30b2fc2207c52dadf63e7ba9a",
+      "source": "zenithblue-oss/panvk-kbase-android",
+      "tag": "g615-v11-csf-v0.1.0-beta.18-rc1",
+      "libraryName": "libvulkan_panfrost.so",
+      "librarySha256": "d000493e634541c043c5b6ca3849594cc84066748b95d62be1d99ec28db034c3",
+      "kernelInterface": "mali_kbase CSF",
+      "gpuModels": [
+        "G610",
+        "G710",
+        "G615",
+        "G715",
+        "G720",
+        "G925"
+      ],
+      "asset": "PanVK-Kbase-Android-g615-v11-csf-v0.1.0-beta.18-rc1-5a07217f.adpkg.zip",
+      "experimental": true,
+      "maturity": "upstream candidate; on-device probe required",
+      "gameplayValidated": false
+    },
+    {
+      "name": "Turnip 26.2.4",
+      "family": "Turnip",
+      "minApi": 26,
+      "url": "https://github.com/nihui/mesa-turnip-android-driver/releases/download/26.2.4/mesa-turnip-android-26.2.4.zip",
+      "sha256": "c61083c549aa8d31f63a830fc617d0d36f0153e9b639c325993e8a3feeb54ad5",
+      "source": "nihui/mesa-turnip-android-driver",
+      "tag": "26.2.4",
+      "libraryName": "libvulkan_freedreno.so",
+      "librarySha256": "eccf978959b679817ee88196893f7d9d624ca42502759d865c855fca8ea2708c",
+      "kernelInterface": "kgsl",
+      "gpuModels": [],
+      "asset": "mesa-turnip-android-26.2.4.zip",
+      "experimental": true,
+      "maturity": "upstream candidate; on-device probe required",
+      "gameplayValidated": false
+    },
+    {
+      "name": "RADV Xclipse 1.5.0",
+      "family": "RADV/Xclipse",
+      "minApi": 34,
+      "url": "https://github.com/JimVulkan/radv-xclipse/releases/download/v1.5.0/radv-xclipse-26.3.0-devel-313870e.zip",
+      "sha256": "b9e34d18150df1c7644078306e6e6bb271d8fdc225ca87fda4cd525f19a07486",
+      "source": "JimVulkan/radv-xclipse",
+      "tag": "v1.5.0",
+      "libraryName": "vulkan.radeon.so",
+      "librarySha256": "4f082a41e58a5b609bb2c4913561938768ddcdab65960fab3bc3bfa6e427c810",
+      "kernelInterface": "amdgpu",
+      "gpuModels": [
+        "Xclipse"
+      ],
+      "asset": "radv-xclipse-26.3.0-devel-313870e.zip",
+      "experimental": true,
+      "maturity": "upstream candidate; on-device probe required",
+      "gameplayValidated": false
+    }
+  ],
+  "candidateFamilies": [
+    "PowerVR",
+    "SwiftShader"
+  ],
+  "signaturePolicy": "Publisher Ed25519 endpoint remains explicit; packaged pins are protected by APK signature."
+}

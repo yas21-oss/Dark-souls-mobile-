@@ -1,0 +1,21 @@
+{
+  "source_url": "https://dl.google.com/android/repository/sys-img/android/arm64-v8a-36_r02.zip",
+  "package": "system-images;android-36;default;arm64-v8a",
+  "revision": 2,
+  "archive_sha1": "62ad6714df790f89c8a8ad32552ffe20bb16fe87",
+  "source_component": "AOSP platform/external/angle android16-release",
+  "files_origin": "system.img GPT super/system /system/lib64",
+  "binaries": {
+    "libEGL_angle.so": {
+      "size": 713088,
+      "sha256": "b96e3e57c13008203c6785689568d5b43fcb9be901c59c343af1423e93a437d5",
+      "load_alignment": 16384
+    },
+    "libGLESv2_angle.so": {
+      "size": 6119784,
+      "sha256": "5da7bb9ec6cf0b40d302d64559a96c4e4af5b8a9afd7d0484866d9b073bc08b6",
+      "load_alignment": 16384
+    }
+  },
+  "reference_source_tree": "9843408045653d27af1981cc161cf009e5e73e73"
+}

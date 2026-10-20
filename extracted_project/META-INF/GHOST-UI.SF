@@ -1,0 +1,217 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA-256-Digest-Manifest: ZJNTYXmUr6SjTuK2eZ/zZfTl7WODegHhYG60a8iNZmU=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: lxfafHV6Hkt15yzGgG9i+CoX7GhkXB4LjQiCXcdi75I=
+
+Name: assets/angle/libEGL_angle.so
+SHA-256-Digest: heuYxRsLjuE8gTB3gCBYqCW/hjcsl2hzgtiSXL6AZzA=
+
+Name: assets/angle/libGLESv2_angle.so
+SHA-256-Digest: 0O9pihN2eG+KxBWmxylTudd0QTGN1md6PAlMSMEkWuk=
+
+Name: assets/cod4x/LICENSE.md
+SHA-256-Digest: 4ljG2Xs79RqCAVsObBmNUyT/eRoRQFu6knU7HbG5/cA=
+
+Name: assets/cod4x/cod4x_ambfix.ff
+SHA-256-Digest: 62Yg1g25YRfC0xFFgpdhzwFsCj6qUISxjIp71C71M9k=
+
+Name: assets/cod4x/cod4x_patch.ff
+SHA-256-Digest: nz9WgjBb8RmBTKdSfsNgojeMqS68EPu1SKXchZCE3kQ=
+
+Name: assets/cod4x/cod4x_patchv2.ff
+SHA-256-Digest: OjeiemqMIIA6acIEHtbhPhgqQyQgiixDAQpnIAdXPa0=
+
+Name: assets/cod4x/jcod4x_00.iwd
+SHA-256-Digest: 2rsFhN1X5Gz6Efjytr+oxrZmX7gcVlmFTJs7PYfFfM0=
+
+Name: assets/drivers/HAL-ADAPTER-NOTICE.txt
+SHA-256-Digest: HuG6jPuYbZ9E84W4/G1YdkR0cRH0dUVlaXpY9oupzN8=
+
+Name: assets/drivers/UPSTREAM-NOTICES.txt
+SHA-256-Digest: bhRp2m9mqIEXXTWcf/H7mRzd4jt2paOpl6m/HZMsy1Y=
+
+Name: assets/drivers/bootstrap-v1.json
+SHA-256-Digest: Rnt7fgOJOuhd3O7jJoJCm4uv0pJMkhPhCiiQ7aK5+Ok=
+
+Name: assets/drivers/catalog-v2.json
+SHA-256-Digest: jD89e1MLRJ0pmbGXDfamPmfo9Ag+wYLmUP0YwLyywWQ=
+
+Name: assets/drivers/packages/PanVK-Kbase-Android-g615-v11-csf-v0.1.0-
+ beta.18-rc1-5a07217f.adpkg.zip
+SHA-256-Digest: lzhhvPLhyZVsYB0zW6pUm3zwW0x3+Pkaj2ylpIJ4ROk=
+
+Name: assets/drivers/packages/PanVK-Kbase-Android-g615-v11-csf-v0.1.0-
+ rc3-5a07217f.adpkg.zip
+SHA-256-Digest: pZ+TsHEVkg7lnAoZGjLQkGhgZ4Pdka5APnP0k09MW7o=
+
+Name: assets/drivers/packages/mali-panvk-26.3.0-devel-r4.zip
+SHA-256-Digest: NsIoqKRCbR99GI6QzdqRTRnUOBOnND2y7PcCA7mqPgo=
+
+Name: assets/drivers/packages/mesa-turnip-android-26.2.4.zip
+SHA-256-Digest: 0pgHOvhMWb1OUDZzIlSCOq3cS8Hm5yIkY+0vqYe89kM=
+
+Name: assets/drivers/packages/radv-xclipse-26.3.0-devel-313870e.zip
+SHA-256-Digest: us5OuqT8RV3q5tBSMreHxFdJmy3xw7tZoB1fflblZYM=
+
+Name: assets/ghost-ui/background-fixed.png
+SHA-256-Digest: 2mOMIDJFrIk44jBGY3/0/2Lgh9G7LVt75/3lhxZ0pXs=
+
+Name: assets/ghost-ui/background.png
+SHA-256-Digest: FQT75CX37dLOjasansj4KukC8tODs9dhT+gItuIR59U=
+
+Name: assets/ghost-ui/hud/icons.png
+SHA-256-Digest: VVLzsNTqu3T1emqyTV+a/DLkwWs3iBNtQDUEVvZ7p10=
+
+Name: assets/ghost-ui/hud/prone.png
+SHA-256-Digest: MroQeVf5yk1gMBPEDjOTRInCpL9r2BeDCfW3nfZKSaU=
+
+Name: assets/ghost-ui/menu.otf
+SHA-256-Digest: D0kfD7txm6qTN+A7i9oyAhE6vAugw6Wcex7Vsv0y6vY=
+
+Name: assets/ghost-ui/missions/ac130.jpg
+SHA-256-Digest: PFuoskkHWwKEfVEvyxvjM6tae17wqmMh8cuqZwxJkZk=
+
+Name: assets/ghost-ui/missions/aftermath.jpg
+SHA-256-Digest: 5YzSeya4YDhkD6WBio4mpZDG6JFTeP2s2jwa9qoPB1U=
+
+Name: assets/ghost-ui/missions/airlift.jpg
+SHA-256-Digest: V2kEP8yTCYWCeukBUNgVfb3YrG12twzrmD2ETxpj7wo=
+
+Name: assets/ghost-ui/missions/airplane.jpg
+SHA-256-Digest: z47WVyj5X4hLImZoyJb8NxiXq7cNkq6SZJmDZIzxfCY=
+
+Name: assets/ghost-ui/missions/ambush.jpg
+SHA-256-Digest: bkLwBXeB93jOkih48/6Cv8OBm63UnufHQH5YpdqleIQ=
+
+Name: assets/ghost-ui/missions/armada.jpg
+SHA-256-Digest: 1cH5po+lp6UZLzsY3/0l6aNd6Rvz5XNNDFpoEVtiL3Y=
+
+Name: assets/ghost-ui/missions/blackout.jpg
+SHA-256-Digest: mrsG74DDA26TL425UqBbSNx888Y9bdPyJk9653ND9Cw=
+
+Name: assets/ghost-ui/missions/bog_a.jpg
+SHA-256-Digest: RdK5sLk5qRKI0tgyFve02ObnkP+8ZOzlbaqh8YHU570=
+
+Name: assets/ghost-ui/missions/bog_b.jpg
+SHA-256-Digest: bpfpSEUPYycX5e+JIZdc8PMMwTiDv/79RAFHkp6yocw=
+
+Name: assets/ghost-ui/missions/cargoship.jpg
+SHA-256-Digest: C4CrYKjFpT57QvdjzXIEcxH90/wTxX+m0eNNvifH5qE=
+
+Name: assets/ghost-ui/missions/coup.jpg
+SHA-256-Digest: NrxV+3pI0CB9jvJBXjG9pR/px1x3Yxs8cFWmFrgAOE4=
+
+Name: assets/ghost-ui/missions/hunted.jpg
+SHA-256-Digest: qRII3xiosmXlTk0fiLhPBUqxvjpZR2O20EcY4EzpQQw=
+
+Name: assets/ghost-ui/missions/icbm.jpg
+SHA-256-Digest: sduSdfWYVujR2uXTCdBEemtMi6VQ+HHuNpMchIldzMk=
+
+Name: assets/ghost-ui/missions/jeepride.jpg
+SHA-256-Digest: tIBNpR8RTPygMMAJ7gPXRNIe7R8Y5A0H0vgIPk96rQk=
+
+Name: assets/ghost-ui/missions/killhouse.jpg
+SHA-256-Digest: 0sRzrFZwQgb15wzsev9cttTid9j1hp24LWvPC79DN2w=
+
+Name: assets/ghost-ui/missions/launchfacility_a.jpg
+SHA-256-Digest: xs058kReQLSgRdsT8ghCnN8BycH+3D+HBZra88yacmo=
+
+Name: assets/ghost-ui/missions/launchfacility_b.jpg
+SHA-256-Digest: nTwKkmtP/XNKBtmB70Uk6Ta+aUj89UeLRAg/7atWSL4=
+
+Name: assets/ghost-ui/missions/scoutsniper.jpg
+SHA-256-Digest: f61yUo70Sbil5bm5orq8zKBCqSEhm3LnHBZRNO4YgMo=
+
+Name: assets/ghost-ui/missions/sniperescape.jpg
+SHA-256-Digest: JlwyaGizF+9w9kpxBKIpNX4koGqshK/Ak0oUN+aa0Fg=
+
+Name: assets/ghost-ui/missions/sources.json
+SHA-256-Digest: DHpSMG3izTQ2dzFhlB3yt3bB/DgmIMtb8dqxvWRhxD4=
+
+Name: assets/ghost-ui/missions/village_assault.jpg
+SHA-256-Digest: TYVpNTS4HYv7WeKgsR/wwz5uUPaFVMWC/fpx3IxGT/w=
+
+Name: assets/ghost-ui/missions/village_defend.jpg
+SHA-256-Digest: 4tVT/O5uN1U5JbbhXgTd8YZ2anCzy5I7oj/o+FPEyzU=
+
+Name: assets/licenses/ANGLE/ANGLE-LICENSE
+SHA-256-Digest: b61i+9fp99gM9ZOCu068sdZxokEz6mHT83FeCgYugII=
+
+Name: assets/licenses/ANGLE/Android16-NOTICE.xml.gz
+SHA-256-Digest: MGTwvXep48GEaFFWHFJB8PtRlPVdRq37bwAOO836mtE=
+
+Name: assets/licenses/ANGLE/SPIRV-Cross-LICENSE
+SHA-256-Digest: tpm7Hpia0FsDfa//h2gYlca92c6IRmHcEV+iXHV14C8=
+
+Name: assets/licenses/ANGLE/SPIRV-Headers-LICENSE
+SHA-256-Digest: W9cy3WZcJlDsAQ0YwkvbmokiUKGJovkvqYiyIKxtBsc=
+
+Name: assets/licenses/ANGLE/SPIRV-Tools-LICENSE
+SHA-256-Digest: aGKKy8yWK6+y2xyTKDEuSY1TEko5QfZPFNYJe8gJtY8=
+
+Name: assets/licenses/ANGLE/Vulkan-Headers-LICENSE
+SHA-256-Digest: kxk5B+KSa8ylH8KW1swnfRACuLxenha6F2IYhs2/830=
+
+Name: assets/licenses/ANGLE/glslang-LICENSE
+SHA-256-Digest: baZxlW/NlwfP6uJxFr7U2eMUox3AwamMkx8sKYx/rLE=
+
+Name: assets/licenses/ANGLE/prebuilt-source.json
+SHA-256-Digest: q0rIYUMYMv02FeAPoGBKKXflE310PEVovyoNBFIcaWI=
+
+Name: assets/licenses/ANGLE/rapidjson-license.txt
+SHA-256-Digest: iZsZ8FN6XWNNkzBHoh0HLEPx3eiu7wJUNkX8CQT7Iv0=
+
+Name: assets/licenses/ANGLE/xxhash-LICENSE
+SHA-256-Digest: QeEs5SsaUtobwRvi31YuQd/779MRKi+PGEO5nUwVaSU=
+
+Name: assets/licenses/ANGLE/zlib-LICENSE
+SHA-256-Digest: bMXbczys6wgPZ5dkFJD7XOIyy7GgkLNmFnhBjai7kKI=
+
+Name: assets/licenses/adrenotools-LICENSE
+SHA-256-Digest: i0auS1SaAlSQSdh6ylVjK0QNchKxgQNmtDLX8yRxtRQ=
+
+Name: assets/licenses/java-libs-LICENSE
+SHA-256-Digest: NPY/nq3A5huMoywrnxzgFRn4L/nK7qIBJoe9c0OD/0Y=
+
+Name: assets/licenses/linkernsbypass-LICENSE
+SHA-256-Digest: tczLbmM0G0Zz1dA3XfOG76R2oWdXCwKWBOha3Y4jkBs=
+
+Name: classes.dex
+SHA-256-Digest: EK8iXt9YIgWCpquHYVfVxdXJ3yeZnEwGfZa2zp0gFK0=
+
+Name: classes2.dex
+SHA-256-Digest: g6B08S99Uu0B1MSyvtDDiI1gCAQRI0CI9rP531AUR6g=
+
+Name: lib/arm64-v8a/libc4icd_hal.so
+SHA-256-Digest: qX2uIwf3vS7m/fjkm1InAVN4hpV7aUbX6u0ovpPzIWk=
+
+Name: lib/arm64-v8a/libc4vk.so
+SHA-256-Digest: /i7HZ4sUQc9AG2dfDAliNhIdtjNBHxmhMR06QWaz5eY=
+
+Name: lib/arm64-v8a/libcod4first.so
+SHA-256-Digest: hUZwxVUAbqlr29OjojLEKMOYTyLeQWEbw0d8uZrZ3eU=
+
+Name: lib/arm64-v8a/libcod4mp.so
+SHA-256-Digest: 6XJvxgd965U1WsEEXXhk/khBglEwrT4buVDh2KpbG2M=
+
+Name: lib/arm64-v8a/libfile_redirect_hook.so
+SHA-256-Digest: me4vBVt+FVIK/eTH9Bko1KeBgmCS1A9jfjtqqKpyBUE=
+
+Name: lib/arm64-v8a/libgsl_alloc_hook.so
+SHA-256-Digest: IpnKst0Z68pSCm4sSjN5tTBUKFBJeI0hoYvD65fD3Ug=
+
+Name: lib/arm64-v8a/libhook_impl.so
+SHA-256-Digest: nDv1XzPb3dnbyOWvem6auAjyP/b4sp5c9VvUl+tHwEI=
+
+Name: lib/arm64-v8a/libmain_hook.so
+SHA-256-Digest: lwuMk8k5U0G+AT88Z719fx9NAsDPp8BXRnY+lmy6ZQo=
+
+Name: res/drawable/icon.xml
+SHA-256-Digest: IGyIsDQuEUolhNctmArpVPHBRLt0yflDiWXSExdYeOc=
+
+Name: resources.arsc
+SHA-256-Digest: fqr7WN37jeS5MRV8/5Pco5BMUT23I0m6xngn+9+vTuk=
+

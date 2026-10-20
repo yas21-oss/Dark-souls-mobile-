@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "source": "APK-signed built-in candidates",
+  "autoDownload": false,
+  "autoActivate": false,
+  "families": [
+    "System",
+    "Turnip",
+    "PanVK",
+    "RADV/Xclipse",
+    "PowerVR",
+    "SwiftShader"
+  ],
+  "panvk": {
+    "tag": "g615-v11-csf-v0.1.0-beta.18-rc1",
+    "minApi": 35,
+    "profile": "g615-v11-csf",
+    "zipSha256": "50f1e096d9521c3c1c63ed8e8248dc6459e7fcb30b2fc2207c52dadf63e7ba9a",
+    "librarySha256": "d000493e634541c043c5b6ca3849594cc84066748b95d62be1d99ec28db034c3",
+    "gameplayValidated": false
+  },
+  "signedCatalog": {
+    "endpoint": null,
+    "publicKey": null,
+    "configurationRequired": true
+  }
+}

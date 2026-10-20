@@ -1,0 +1,17 @@
+Bundled binaries are unmodified published Android packages. Mesa MIT license; preserve original notices within driver ZIPs.
+
+zenithblue-oss/panvk-kbase-android g615-v11-csf-v0.1.0-beta.18-rc1
+https://github.com/zenithblue-oss/panvk-kbase-android/releases/download/g615-v11-csf-v0.1.0-beta.18-rc1/PanVK-Kbase-Android-g615-v11-csf-v0.1.0-beta.18-rc1-5a07217f.adpkg.zip
+SHA256 50f1e096d9521c3c1c63ed8e8248dc6459e7fcb30b2fc2207c52dadf63e7ba9a
+nihui/mesa-turnip-android-driver 26.2.4
+https://github.com/nihui/mesa-turnip-android-driver/releases/download/26.2.4/mesa-turnip-android-26.2.4.zip
+SHA256 c61083c549aa8d31f63a830fc617d0d36f0153e9b639c325993e8a3feeb54ad5
+JimVulkan/radv-xclipse v1.5.0
+https://github.com/JimVulkan/radv-xclipse/releases/download/v1.5.0/radv-xclipse-26.3.0-devel-313870e.zip
+SHA256 b9e34d18150df1c7644078306e6e6bb271d8fdc225ca87fda4cd525f19a07486
+https://docs.mesa3d.org/license.html
+Turnip source: https://github.com/nihui/mesa-turnip-android-driver
+PanVK source and license notices: https://github.com/zenithblue-oss/panvk-kbase-android
+RADV source and notices: https://github.com/JimVulkan/radv-xclipse
+
+R5 added pinned upstream PanVK RC3 and JimVulkan Mali Bifrost 1.3.0 packages. Their original archives and bundled notices are retained. Source URLs and hashes are in catalog-v2.json. Automatic installation does not imply validation on Kirin or other devices.
